@@ -56,7 +56,7 @@ export default (): CliPlugin<AppTools> => ({
 
         const { bundlerType = 'webpack' } = api.useAppContext();
         const babelConfig =
-          bundlerType === 'webpack'
+          bundlerType === 'webpack' || bundlerType === 'rspack'
             ? (config: any) => {
                 // Add id for useLoader method,
                 // The useLoader can be used even if the SSR is not enabled

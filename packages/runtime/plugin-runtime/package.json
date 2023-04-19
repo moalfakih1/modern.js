@@ -140,7 +140,6 @@
     "@babel/core": "^7.18.0",
     "@babel/runtime": "^7.18.0",
     "@babel/types": "^7.18.0",
-    "cookie": "0.5.0",
     "@loadable/babel-plugin": "^5.13.2",
     "@loadable/component": "^5.15.0",
     "@loadable/server": "^5.15.1",
@@ -159,6 +158,8 @@
     "@types/react-helmet": "^6.1.2",
     "@types/redux-logger": "^3.0.9",
     "@types/styled-components": "^5.1.14",
+    "babel-plugin-dynamic-import-node": "2.3.3",
+    "cookie": "0.5.0",
     "esbuild": "0.15.7",
     "hoist-non-react-statics": "^3.3.2",
     "invariant": "^2.2.4",
@@ -174,7 +175,6 @@
     "react-dom": ">=17"
   },
   "devDependencies": {
-    "@types/cookie": "0.5.1",
     "@modern-js/app-tools": "workspace:*",
     "@modern-js/core": "workspace:*",
     "@modern-js/server-core": "workspace:*",
@@ -183,6 +183,7 @@
     "@scripts/jest-config": "workspace:*",
     "@testing-library/react": "^13.4.0",
     "@testing-library/react-hooks": "^8.0.1",
+    "@types/cookie": "0.5.1",
     "@types/invariant": "^2.2.30",
     "@types/jest": "^29",
     "@types/loadable__webpack-plugin": "^5.7.3",
