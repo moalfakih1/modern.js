@@ -7,5 +7,5 @@ export default defineConfig({
   server: {
     ssr: true,
   },
-  plugins: [appTools()],
+  plugins: [appTools({ bundler: 'webpack' })],
 });

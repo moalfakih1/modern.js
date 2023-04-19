@@ -46,6 +46,14 @@ export default (): CliPlugin<AppTools> => ({
 
     let pluginsExportsUtils: any;
 
+    function createModernVars(isServer: boolean) {
+      return {
+        [`process.env.MODERN_TARGET`]: JSON.stringify(
+          isServer ? 'node' : 'browser',
+        ),
+      };
+    }
+
     return {
       config() {
         const appContext = api.useAppContext();
@@ -85,7 +93,7 @@ export default (): CliPlugin<AppTools> => ({
             },
           },
           tools: {
-            webpackChain: (chain, { isServer, isServiceWorker, CHAIN_ID }) => {
+            bundlerChain(chain, { isServer, isServiceWorker, CHAIN_ID }) {
               const userConfig = api.useResolvedConfigContext();
 
               if (
@@ -95,20 +103,30 @@ export default (): CliPlugin<AppTools> => ({
                 hasStringSSREntry(userConfig)
               ) {
                 // eslint-disable-next-line @typescript-eslint/no-require-imports, @typescript-eslint/no-var-requires
-                const LoadableWebpackPlugin = require('@loadable/webpack-plugin');
+                const LoadableWebpackPlugin = require('./loadable-webpack-plugin.js');
                 chain
                   .plugin(CHAIN_ID.PLUGIN.LOADABLE)
                   .use(LoadableWebpackPlugin, [
                     { filename: LOADABLE_STATS_FILE },
                   ]);
               }
+            },
 
-              // add environment variables to determine the node/browser
-              const modernVars = {
-                [`process.env.MODERN_TARGET`]: JSON.stringify(
-                  isServer || isServiceWorker ? 'node' : 'browser',
-                ),
+            rspack(config: any, { isServer, isServiceWorker }: any) {
+              const modernVars = createModernVars(isServer || isServiceWorker);
+              config.builtins = {
+                ...(config.builtins || {}),
+                define: {
+                  ...(config.builtins?.define || {}),
+                  ...modernVars,
+                },
               };
+            },
+
+            webpackChain: (chain, { isServer, isServiceWorker, CHAIN_ID }) => {
+              // add environment variables to determine the node/browser
+              const modernVars = createModernVars(isServer || isServiceWorker);
+
               chain.plugin(CHAIN_ID.PLUGIN.DEFINE).tap(args => {
                 const [vars, ...rest] = args;
                 return [
