@@ -83,11 +83,11 @@ importers:
       '@modern-js/server': workspace:*
       '@modern-js/types': workspace:*
       '@modern-js/utils': workspace:*
-      '@rspack/core': 0.1.8
-      '@rspack/dev-client': 0.1.8
-      '@rspack/dev-middleware': 0.1.8
-      '@rspack/plugin-html': 0.1.8
-      '@rspack/postcss-loader': 0.1.8
+      '@rspack/core': 0.0.0-canary-d403de1-20230424164915
+      '@rspack/dev-client': 0.0.0-canary-d403de1-20230424164915
+      '@rspack/dev-middleware': 0.0.0-canary-d403de1-20230424164915
+      '@rspack/plugin-html': 0.0.0-canary-d403de1-20230424164915
+      '@rspack/postcss-loader': 0.0.0-canary-d403de1-20230424164915
       '@scripts/vitest-config': workspace:*
       '@types/node': ^14
       antd: '4'
@@ -102,11 +102,11 @@ importers:
       '@modern-js/server': link:../../server/server
       '@modern-js/types': link:../../toolkit/types
       '@modern-js/utils': link:../../toolkit/utils
-      '@rspack/core': 0.1.8
-      '@rspack/dev-client': 0.1.8
-      '@rspack/dev-middleware': 0.1.8
-      '@rspack/plugin-html': 0.1.8
-      '@rspack/postcss-loader': 0.1.8
+      '@rspack/core': 0.0.0-canary-d403de1-20230424164915
+      '@rspack/dev-client': 0.0.0-canary-d403de1-20230424164915
+      '@rspack/dev-middleware': 0.0.0-canary-d403de1-20230424164915
+      '@rspack/plugin-html': 0.0.0-canary-d403de1-20230424164915_mvaddmmxwvgwtqax7zhfxxjx5y
+      '@rspack/postcss-loader': 0.0.0-canary-d403de1-20230424164915
       caniuse-lite: 1.0.30001451
       core-js: 3.27.2
       rspack-plugin-virtual-module: 0.1.0
@@ -2467,6 +2467,7 @@ importers:
       '@types/react-side-effect': ^1.1.1
       '@types/redux-logger': ^3.0.9
       '@types/styled-components': ^5.1.14
+      babel-plugin-dynamic-import-node: 2.3.3
       cookie: 0.5.0
       esbuild: 0.15.7
       hoist-non-react-statics: ^3.3.2
@@ -2504,6 +2505,7 @@ importers:
       '@types/react-helmet': 6.1.5
       '@types/redux-logger': 3.0.9
       '@types/styled-components': 5.1.25
+      babel-plugin-dynamic-import-node: 2.3.3
       cookie: 0.5.0
       esbuild: 0.15.7
       hoist-non-react-statics: 3.3.2
@@ -4390,6 +4392,29 @@ importers:
       '@types/react': 18.0.21
       '@types/react-dom': 18.0.6
       typescript: 4.9.3
+
+  tests/integration/builder-rspack-ssr:
+    specifiers:
+      '@modern-js/app-tools': workspace:*
+      '@modern-js/runtime': workspace:*
+      '@types/jest': ^29
+      '@types/node': ^14
+      '@types/react': ^18
+      '@types/react-dom': ^18
+      react: ^18
+      react-dom: ^18
+      typescript: ^4
+    dependencies:
+      '@modern-js/runtime': link:../../../packages/runtime/plugin-runtime
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    devDependencies:
+      '@modern-js/app-tools': link:../../../packages/solutions/app-tools
+      '@types/jest': 29.2.6
+      '@types/node': 14.18.35
+      '@types/react': 18.0.21
+      '@types/react-dom': 18.0.6
+      typescript: 4.9.5
 
   tests/integration/builder-rspack-with-ssr:
     specifiers:
@@ -11781,97 +11806,97 @@ packages:
       rollup: 2.79.0
     dev: true
 
-  /@rspack/binding-darwin-arm64/0.1.8:
-    resolution: {integrity: sha512-H3Q9B32hJk8oihsD2TXFPzJ7mWqTFivtbB0Sigq/pJnQsyuOR7fzJE9RvA4KxWOgUF3gr8JSZJigKu/iLk7tJg==}
+  /@rspack/binding-darwin-arm64/0.0.0-canary-d403de1-20230424164915:
+    resolution: {integrity: sha512-GQCZpFjwM6h31rFrZN1uLH+pscZXvogq4UQLqUXyT79By444w86baECSgEiBpc+9F4Js8F8w6oposnU8kHuV8g==}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     dev: false
     optional: true
 
-  /@rspack/binding-darwin-x64/0.1.8:
-    resolution: {integrity: sha512-1c4GmjgyYUGHof5J8qZnEEXtegTGU/PMXKYK8Da/wfDIO4Tklh5ZCw+T4TNSFigLnzj/SGq7bY+bbE4RM3b1mw==}
+  /@rspack/binding-darwin-x64/0.0.0-canary-d403de1-20230424164915:
+    resolution: {integrity: sha512-3pVjkjkJEdFTrVx71FcLJMplTIknTheSHeu5eVgay8etBS9QHyNb48LZU2HH4FAQSG83tPnvbx4rngGhj0q7Og==}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     dev: false
     optional: true
 
-  /@rspack/binding-linux-arm64-gnu/0.1.8:
-    resolution: {integrity: sha512-xM6IhCZIrCcJjPNpllvlvsekesRT1R9auK07v7vPVJV0tcBJKj8JFqIEOTsjU4a8KK3rr2ImgMSYwpUC/0ORrg==}
+  /@rspack/binding-linux-arm64-gnu/0.0.0-canary-d403de1-20230424164915:
+    resolution: {integrity: sha512-alUG+pN72DuolrF0/w1jDbuOeCuKqVmAfaGPfp0UOq7yl8qrIyV+azlfreIcFp5OB40acglkXSWt/a7OqwvQLg==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     dev: false
     optional: true
 
-  /@rspack/binding-linux-arm64-musl/0.1.8:
-    resolution: {integrity: sha512-GwP+c917UZ0eqUL0SzzQRByPv6YgJx0M/jx0odjxPmoovrQ5SuJXepDaVnX+kMFpiBJbbcOFZ00orav0SUuuhA==}
+  /@rspack/binding-linux-arm64-musl/0.0.0-canary-d403de1-20230424164915:
+    resolution: {integrity: sha512-lPbWVnMQaBBd8sPriSorDG/LXXXKwk8Rt7f+dewiVpKx3Jyj9VgiqH5JaDt+dNC6j7AzHxwDv50hDByZYHFRBg==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     dev: false
     optional: true
 
-  /@rspack/binding-linux-x64-gnu/0.1.8:
-    resolution: {integrity: sha512-t//YucSLoUWIHICa6o3beybdTghie1PB4aEgjiB8qe36a7JdSTB/NvoSdJMZ/i5Yi4NN3ZVoyBcnzeF78aC9Xg==}
+  /@rspack/binding-linux-x64-gnu/0.0.0-canary-d403de1-20230424164915:
+    resolution: {integrity: sha512-86AfoqcQJkwDWwyh4KEOLZC3wI6N0aX3Da2l/hDXKLRwJuzB08Cg54JAAjn690YfwtZtUsARsEkhDBFqt4hWPQ==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     dev: false
     optional: true
 
-  /@rspack/binding-linux-x64-musl/0.1.8:
-    resolution: {integrity: sha512-Ov7DxKrTRwOjiB2vltrNXqfaoBjv+wpcIVNiHSawfAGQBV/yQyEvoqaIMp5oAt+b9cH/PkPgQAYF7ZdiJI742g==}
+  /@rspack/binding-linux-x64-musl/0.0.0-canary-d403de1-20230424164915:
+    resolution: {integrity: sha512-xfMplqrtiNtyRuF6hkRGfeCK9XkReSOr/K+Bsb/DfinbtFqb8qpKnASvNJnoJKHS9iGSjrto0Bghc9ndUnL4FA==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     dev: false
     optional: true
 
-  /@rspack/binding-win32-arm64-msvc/0.1.8:
-    resolution: {integrity: sha512-Y7lWi3AqR7kLYHOHf10mVNzdg5S/ZSGGh5U6Hi1u/cL3eGg3hfWnXLrHSs4gxUv09GyLMbLbQWZFtsKNLhmi9g==}
+  /@rspack/binding-win32-arm64-msvc/0.0.0-canary-d403de1-20230424164915:
+    resolution: {integrity: sha512-B9EMFqYEAkc43MmotAEygNNISfe9Ca8LRwzREpPnk8x92XhlZGAcdTZggydIsHoZdBXcJ1pnMevgmF/HcQctpg==}
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
     dev: false
     optional: true
 
-  /@rspack/binding-win32-ia32-msvc/0.1.8:
-    resolution: {integrity: sha512-DY03Kgbp7wJ0vkDg9Enwn2bJp8gxgHVz9ucKzh//aWgWqT468Zof6Yi1+DPK2qs5vmW+6tfcLjTxJWW7UpvUeQ==}
+  /@rspack/binding-win32-ia32-msvc/0.0.0-canary-d403de1-20230424164915:
+    resolution: {integrity: sha512-WVpEtwUH4XLlHtjC6128yOCx8nYF7kY3iBELxBo/oPc01ShrLmdz/Uoeb1LQXRF4u55/b5Zzs3lZvAir81+XPg==}
     cpu: [ia32]
     os: [win32]
     requiresBuild: true
     dev: false
     optional: true
 
-  /@rspack/binding-win32-x64-msvc/0.1.8:
-    resolution: {integrity: sha512-CPoOFtgidTlMqwmrN/C60LsH5fRBbizpDH+u0TCftAPb3VwMvE6toLCkVl4vlbIVtmonErJLO9KKKbINt6d7bQ==}
+  /@rspack/binding-win32-x64-msvc/0.0.0-canary-d403de1-20230424164915:
+    resolution: {integrity: sha512-Dz06nVZzaf8ieVSHwXnB4O6r/jyYFTxCHmC+Fh5MJGwbBGilw9Yy+LUXN6J2dlk/AJOpI0UMWxxSg1Eg/7r7bw==}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
     dev: false
     optional: true
 
-  /@rspack/binding/0.1.8:
-    resolution: {integrity: sha512-ct8OX1GjSPfNlrL15mctx73KLh5SourHGkmkpVfSF6GS1rhT3DfY2VNFPSiuouybppIZ/KE08lNOHDw9quPaGQ==}
+  /@rspack/binding/0.0.0-canary-d403de1-20230424164915:
+    resolution: {integrity: sha512-VmEFAU2+QmpTh/4h77b+kJs6xUwthiho3o31tjPwSZTqGeZXcfPEVZcMDQmt2xyr1x1te2ODY9ETKJoUYdZoFw==}
     optionalDependencies:
-      '@rspack/binding-darwin-arm64': 0.1.8
-      '@rspack/binding-darwin-x64': 0.1.8
-      '@rspack/binding-linux-arm64-gnu': 0.1.8
-      '@rspack/binding-linux-arm64-musl': 0.1.8
-      '@rspack/binding-linux-x64-gnu': 0.1.8
-      '@rspack/binding-linux-x64-musl': 0.1.8
-      '@rspack/binding-win32-arm64-msvc': 0.1.8
-      '@rspack/binding-win32-ia32-msvc': 0.1.8
-      '@rspack/binding-win32-x64-msvc': 0.1.8
+      '@rspack/binding-darwin-arm64': 0.0.0-canary-d403de1-20230424164915
+      '@rspack/binding-darwin-x64': 0.0.0-canary-d403de1-20230424164915
+      '@rspack/binding-linux-arm64-gnu': 0.0.0-canary-d403de1-20230424164915
+      '@rspack/binding-linux-arm64-musl': 0.0.0-canary-d403de1-20230424164915
+      '@rspack/binding-linux-x64-gnu': 0.0.0-canary-d403de1-20230424164915
+      '@rspack/binding-linux-x64-musl': 0.0.0-canary-d403de1-20230424164915
+      '@rspack/binding-win32-arm64-msvc': 0.0.0-canary-d403de1-20230424164915
+      '@rspack/binding-win32-ia32-msvc': 0.0.0-canary-d403de1-20230424164915
+      '@rspack/binding-win32-x64-msvc': 0.0.0-canary-d403de1-20230424164915
     dev: false
 
-  /@rspack/core/0.1.8:
-    resolution: {integrity: sha512-8eGAUjr/b0wKegm5qtS13CKrEBjF5Q5iQ+GTmBvXu86rtKgt9seQGKyaBLZp6AMzObi19yThRLsle8jNvjSfug==}
+  /@rspack/core/0.0.0-canary-d403de1-20230424164915:
+    resolution: {integrity: sha512-d7eO7Uo+0g8zDdQLygpO641MhP+TrR87CY7jmDEIAaGNnIRiwVjkHx4MX7p4ljkqSyfio4eKjypeY3ZyEEg/Lw==}
     dependencies:
-      '@rspack/binding': 0.1.8
-      '@rspack/dev-client': 0.1.8_react-refresh@0.14.0
+      '@rspack/binding': 0.0.0-canary-d403de1-20230424164915
+      '@rspack/dev-client': 0.0.0-canary-d403de1-20230424164915_react-refresh@0.14.0
       '@swc/helpers': 0.5.0
       browserslist: 4.21.4
       compare-versions: 6.0.0-rc.1
@@ -11899,8 +11924,8 @@ packages:
       - webpack-plugin-serve
     dev: false
 
-  /@rspack/dev-client/0.1.8:
-    resolution: {integrity: sha512-BDkCTFclZlvZcFORhoHGkgLjfn0xzTrSPsMBMrz2ErrMFZknCL42Fbv7KqP8Ek5PSsatBOvIJ6p51hdH9HOiqg==}
+  /@rspack/dev-client/0.0.0-canary-d403de1-20230424164915:
+    resolution: {integrity: sha512-TLwmNw3LIFPoWN2JNqxhxh95trTPxplxh9aJ02+r3zggH0zidTn1J5oTlfJEd+kgVBCjWVYUy2oUvT/Zy97adQ==}
     peerDependencies:
       react-refresh: '>=0.10.0 <1.0.0'
     peerDependenciesMeta:
@@ -11928,8 +11953,8 @@ packages:
       - webpack-plugin-serve
     dev: false
 
-  /@rspack/dev-client/0.1.8_react-refresh@0.14.0:
-    resolution: {integrity: sha512-BDkCTFclZlvZcFORhoHGkgLjfn0xzTrSPsMBMrz2ErrMFZknCL42Fbv7KqP8Ek5PSsatBOvIJ6p51hdH9HOiqg==}
+  /@rspack/dev-client/0.0.0-canary-d403de1-20230424164915_react-refresh@0.14.0:
+    resolution: {integrity: sha512-TLwmNw3LIFPoWN2JNqxhxh95trTPxplxh9aJ02+r3zggH0zidTn1J5oTlfJEd+kgVBCjWVYUy2oUvT/Zy97adQ==}
     peerDependencies:
       react-refresh: '>=0.10.0 <1.0.0'
     peerDependenciesMeta:
@@ -11958,10 +11983,10 @@ packages:
       - webpack-plugin-serve
     dev: false
 
-  /@rspack/dev-middleware/0.1.8:
-    resolution: {integrity: sha512-b0hBTw0QYi6hreGsgia2Q5Pei82IWmdYQN0p7BVoNfDC4x2MFDqW7JxEvU6X+r+nnPQWeZzDcR3OvZgru8qyHQ==}
+  /@rspack/dev-middleware/0.0.0-canary-d403de1-20230424164915:
+    resolution: {integrity: sha512-479aMDYSUCEMbfVdBSkV2JMZci7bNVsNkaRbt+73kwES0xPOH7q3IZFPzXClmaX0QdYPNEF/yq6HCc6Q4h+GGA==}
     dependencies:
-      '@rspack/core': 0.1.8
+      '@rspack/core': 0.0.0-canary-d403de1-20230424164915
       mime-types: 2.1.35
       webpack-dev-middleware: 6.0.2
     transitivePeerDependencies:
@@ -11981,35 +12006,26 @@ packages:
       - webpack-plugin-serve
     dev: false
 
-  /@rspack/plugin-html/0.1.8:
-    resolution: {integrity: sha512-pmxqkP7Y2v17VN1DqjN9mk3au9tyUru8AeK8IC7jnGdWjejfLrBBmEJSGGHmBRT8QLAe3HS+MSX+SWZqdGSSlw==}
+  /@rspack/plugin-html/0.0.0-canary-d403de1-20230424164915_mvaddmmxwvgwtqax7zhfxxjx5y:
+    resolution: {integrity: sha512-ZSzX4+Ul6s9Wo7XDCkOtfxnL/QldFasKgfmQTPmIWFm21AF+dfWPtJ4fe2MioiTZU5v9El6m5Fc7n6yRlVfjHg==}
+    peerDependencies:
+      '@rspack/core': 0.0.0-canary-d403de1-20230424164915
+    peerDependenciesMeta:
+      '@rspack/core':
+        optional: true
     dependencies:
-      '@rspack/core': 0.1.8
+      '@rspack/core': 0.0.0-canary-d403de1-20230424164915
       '@types/html-minifier-terser': 7.0.0
       html-minifier-terser: 7.0.0
       lodash.template: 4.5.0
       parse5: 7.1.1
       tapable: 2.2.1
-    transitivePeerDependencies:
-      - '@swc/core'
-      - '@types/webpack'
-      - bufferutil
-      - debug
-      - esbuild
-      - sockjs-client
-      - supports-color
-      - type-fest
-      - uglify-js
-      - utf-8-validate
-      - webpack-cli
-      - webpack-hot-middleware
-      - webpack-plugin-serve
     dev: false
 
-  /@rspack/postcss-loader/0.1.8:
-    resolution: {integrity: sha512-opgTSns9AReJrEQw42g4aF689JzhANKCI9+OFj2+7gfEHYMJzYAqHyDpxetKxInSm7qZ3jX76SNv55RfOk6WYA==}
+  /@rspack/postcss-loader/0.0.0-canary-d403de1-20230424164915:
+    resolution: {integrity: sha512-DnXkiLmJ90y7XyQ/SPNZg20gy6BxDJtceuZ6Fd0+RcvhL1FXs8SGB2kCW2yLwrX1jhsXFrHHDOpbdyc0qW3EsQ==}
     dependencies:
-      '@rspack/binding': 0.1.8
+      '@rspack/binding': 0.0.0-canary-d403de1-20230424164915
       postcss: 8.4.21
       postcss-modules: 5.0.0_postcss@8.4.21
       postcss-pxtorem: 6.0.0_postcss@8.4.21
@@ -16028,8 +16044,7 @@ packages:
   /babel-plugin-dynamic-import-node/2.3.3:
     resolution: {integrity: sha512-jZVI+s9Zg3IqA/kdi0i6UDCybUI3aSBLnglhYbSSjKlV7yF1F/5LWv8MakQmvYpnbJDS6fcBL2KzHSxNCMtWSQ==}
     dependencies:
-      object.assign: 4.1.2
-    dev: true
+      object.assign: 4.1.4
 
   /babel-plugin-extract-import-names/1.6.22:
     resolution: {integrity: sha512-yJ9BsJaISua7d8zNT7oRG1ZLBJCIdZ4PZqmH8qa9N5AK01ifk3fnkc98AXhtzE7UkfCsEumvoQWgoYLhOnJ7jQ==}
@@ -18931,7 +18946,7 @@ packages:
       es-to-primitive: 1.2.1
       function-bind: 1.1.1
       function.prototype.name: 1.1.5
-      get-intrinsic: 1.1.2
+      get-intrinsic: 1.2.0
       get-symbol-description: 1.0.0
       has: 1.0.3
       has-property-descriptors: 1.0.0
@@ -18945,7 +18960,7 @@ packages:
       is-weakref: 1.0.2
       object-inspect: 1.12.3
       object-keys: 1.1.1
-      object.assign: 4.1.2
+      object.assign: 4.1.4
       regexp.prototype.flags: 1.4.3
       string.prototype.trimend: 1.0.5
       string.prototype.trimstart: 1.0.5
@@ -21302,7 +21317,7 @@ packages:
     resolution: {integrity: sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw==}
     engines: {node: '>= 4.0'}
     os: [darwin]
-    deprecated: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+    deprecated: The v1 package contains DANGEROUS / INSECURE binaries. Upgrade to safe fsevents v2
     requiresBuild: true
     dependencies:
       bindings: 1.5.0
@@ -21389,6 +21404,7 @@ packages:
       function-bind: 1.1.1
       has: 1.0.3
       has-symbols: 1.0.3
+    dev: false
 
   /get-intrinsic/1.2.0:
     resolution: {integrity: sha512-L049y6nFOuom5wGyRc3/gdTLO94dySVKRACj1RmJZBQXlbTMhtNIgkWkUHq+jYmZvKf14EW1EoJnnjbmoHij0Q==}
@@ -22593,7 +22609,7 @@ packages:
     resolution: {integrity: sha512-O0DB1JC/sPyZl7cIo78n5dR7eUSwwpYPiXRhTzNxZVAMUuB8vlnRFyLxdrVToks6XPLVnFfbzaVd5WLjhgg+vA==}
     engines: {node: '>= 0.4'}
     dependencies:
-      get-intrinsic: 1.1.2
+      get-intrinsic: 1.2.0
       has: 1.0.3
       side-channel: 1.0.4
     dev: false
@@ -24502,7 +24518,7 @@ packages:
     engines: {node: '>=4.0'}
     dependencies:
       array-includes: 3.1.5
-      object.assign: 4.1.2
+      object.assign: 4.1.4
     dev: false
 
   /junk/3.1.0:
@@ -26513,15 +26529,6 @@ packages:
       isobject: 3.0.1
     dev: false
 
-  /object.assign/4.1.2:
-    resolution: {integrity: sha512-ixT2L5THXsApyiUPYKmW+2EHpXXe5Ii3M+f4e+aJFAHao5amFRW6J0OO6c/LU8Be47utCx2GL89hxGB6XSmKuQ==}
-    engines: {node: '>= 0.4'}
-    dependencies:
-      call-bind: 1.0.2
-      define-properties: 1.1.4
-      has-symbols: 1.0.3
-      object-keys: 1.1.1
-
   /object.assign/4.1.4:
     resolution: {integrity: sha512-1mxKf0e58bvyjSCtKYY4sRe9itRk3PJpquJOjeIkz885CczcI4IvJJDLPS72oowuSh+pBxUFROpX+TU++hxhZQ==}
     engines: {node: '>= 0.4'}
@@ -26530,7 +26537,6 @@ packages:
       define-properties: 1.1.4
       has-symbols: 1.0.3
       object-keys: 1.1.1
-    dev: false
 
   /object.entries/1.1.5:
     resolution: {integrity: sha512-TyxmjUoZggd4OrrU1W66FMDG6CuqJxsFvymeyXI51+vQLN67zYfZseptRge703kKQdo4uccgAKebXFcRCzk4+g==}
@@ -31013,6 +31019,7 @@ packages:
   /rimraf/4.4.0:
     resolution: {integrity: sha512-X36S+qpCUR0HjXlkDe4NAOhS//aHH0Z+h8Ckf2auGJk3PTnx5rLmrHkwNdbVQuCSUhOyFrlRvFEllZOYE+yZGQ==}
     engines: {node: '>=14'}
+    hasBin: true
     dependencies:
       glob: 9.3.0
     dev: true
@@ -31495,7 +31502,7 @@ packages:
     resolution: {integrity: sha512-q5XPytqFEIKHkGdiMIrY10mvLRvnQh42/+GoBlFW3b2LXLE2xxJpZFdm94we0BaoV3RwJyGqg5wS7epxTv0Zvw==}
     dependencies:
       call-bind: 1.0.2
-      get-intrinsic: 1.1.2
+      get-intrinsic: 1.2.0
       object-inspect: 1.12.3
 
   /signal-exit/3.0.7:
@@ -34116,10 +34123,13 @@ packages:
 
   /uuid/3.4.0:
     resolution: {integrity: sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==}
+    deprecated: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+    hasBin: true
     dev: false
 
   /uuid/8.3.2:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
+    hasBin: true
 
   /uvu/0.5.6:
     resolution: {integrity: sha512-+g8ENReyr8YsOc6fv/NVJs2vFdHBnBNdfE49rshrTzDWOlUx4Gq7KOS2GD8eqhy2j+Ejq29+SbKH8yjkAqXqoA==}

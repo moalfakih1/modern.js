@@ -9,5 +9,5 @@ export default defineConfig({
       mode: 'stream',
     },
   },
-  plugins: [appTools()],
+  plugins: [appTools({ bundler: 'experimental-rspack' })],
 });

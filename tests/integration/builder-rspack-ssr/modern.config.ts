@@ -6,9 +6,6 @@ export default defineConfig({
     router: true,
     state: false,
   },
-  output: {
-    disableMinimize: true,
-  },
   server: {
     ssr: true,
   },

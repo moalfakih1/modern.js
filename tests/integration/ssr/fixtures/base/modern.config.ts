@@ -7,5 +7,5 @@ export default defineConfig({
   server: {
     ssr: true,
   },
-  plugins: [appTools({ bundler: 'webpack' })],
+  plugins: [appTools({ bundler: 'experimental-rspack' })],
 });

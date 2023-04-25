@@ -121,6 +121,13 @@ export default (): CliPlugin<AppTools> => ({
                   ...modernVars,
                 },
               };
+
+              // for streaming ssr
+              // for (const entry of Reflect.ownKeys(config.entry)) {
+              //   config.entry![entry as string]!.unshift(
+              //     require.resolve('@rspack/dev-client/react-refresh'),
+              //   );
+              // }
             },
 
             webpackChain: (chain, { isServer, isServiceWorker, CHAIN_ID }) => {
