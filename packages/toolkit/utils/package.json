@@ -34,6 +34,10 @@
       "jsnext:source": "./src/cli/constants/chainId.ts",
       "default": "./dist/cjs/cli/constants/chainId.js"
     },
+    "./derivable-config": {
+      "jsnext:source": "./src/cli/derivable-config.ts",
+      "default": "./dist/cjs/cli/derivable-config.js"
+    },
     "./runtime/router": {
       "jsnext:source": "./src/runtime/router.ts",
       "require": "./dist/cjs/runtime/router.js",
@@ -116,6 +120,10 @@
         "types": "./dist/types/cli/constants/chainId.d.ts",
         "default": "./dist/cjs/cli/constants/chainId.js"
       },
+      "./derivable-config": {
+        "types": "./dist/types/cli/derivable-config.d.ts",
+        "default": "./dist/cjs/cli/derivable-config.js"
+      },
       "./runtime/router": {
         "types": "./dist/types/runtime/router.d.ts",
         "require": "./dist/cjs/runtime/router.js",
@@ -188,6 +196,9 @@
       ],
       "chain-id": [
         "./dist/types/cli/constants/chainId.d.ts"
+      ],
+      "derivable-config": [
+        "./dist/types/cli/derivable-config.d.ts"
       ],
       "runtime/router": [
         "./dist/types/runtime/router.d.ts"
