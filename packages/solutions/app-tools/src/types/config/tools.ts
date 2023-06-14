@@ -4,15 +4,11 @@ import type { PluginSwcOptions } from '@modern-js/builder-plugin-swc';
 import type { PluginEsbuildOptions } from '@modern-js/builder-plugin-esbuild';
 import type { BuilderConfig as RsBuilderConfig } from '@modern-js/builder-rspack-provider';
 import type { SharedToolsConfig as BuilderSharedToolsConfig } from '@modern-js/builder-shared';
-import type { UnwrapBuilderConfig } from '../utils';
 
-export type BuilderToolsConfig = UnwrapBuilderConfig<BuilderConfig, 'tools'> & {
+export type BuilderToolsConfig = Required<BuilderConfig>['tools'] & {
   esbuild?: PluginEsbuildOptions;
 };
-export type RsBuilderToolsConfig = UnwrapBuilderConfig<
-  RsBuilderConfig,
-  'tools'
->;
+export type RsBuilderToolsConfig = Required<RsBuilderConfig>['tools'];
 export type Tailwindcss =
   | Record<string, any>
   | ((options: Record<string, any>) => Record<string, any> | void);

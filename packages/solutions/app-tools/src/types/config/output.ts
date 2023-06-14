@@ -2,13 +2,9 @@ import type { BuilderConfig } from '@modern-js/builder-webpack-provider';
 import type { BuilderConfig as RsBuilderConfig } from '@modern-js/builder-rspack-provider';
 import type { SharedOutputConfig as BuilderSharedOutputConfig } from '@modern-js/builder-shared';
 import type { SSGConfig } from '@modern-js/types';
-import { UnwrapBuilderConfig } from '../utils';
 
-export type BuilderOutputConfig = UnwrapBuilderConfig<BuilderConfig, 'output'>;
-export type RsBuilderOutputConfig = UnwrapBuilderConfig<
-  RsBuilderConfig,
-  'output'
->;
+export type BuilderOutputConfig = Required<BuilderConfig>['output'];
+export type RsBuilderOutputConfig = Required<RsBuilderConfig>['output'];
 
 export interface SharedOutputConfig extends BuilderSharedOutputConfig {
   ssg?: SSGConfig;
