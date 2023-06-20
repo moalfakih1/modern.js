@@ -1,6 +1,7 @@
 import path, { join } from 'path';
 import { RspackVirtualModulePlugin } from 'rspack-plugin-virtual-module';
 import type { DocPlugin, RouteMeta } from '@modern-js/doc-core';
+import { slash } from '@modern-js/utils';
 import { remarkCodeToDemo } from './codeToDemo';
 import { toValidVarName } from './utils';
 
@@ -26,7 +27,7 @@ export const demoMeta: Record<
  */
 export function pluginPreview(options?: Options): DocPlugin {
   const isMobile = options?.isMobile ?? false;
-  const demoComponentPath = path.join(__dirname, '..', 'dist/demo.js');
+  const demoComponentPath = path.join(__dirname, '..', 'dist', 'demo.js');
   const demoRuntimeModule = new RspackVirtualModulePlugin({});
   const getRouteMeta = () => routeMeta;
 
@@ -127,7 +128,7 @@ export function pluginPreview(options?: Options): DocPlugin {
           routePath: '/~demo/:id',
           content: `
 
-import Demo from '${demoComponentPath}'
+import Demo from '${slash(demoComponentPath)}'
 
 <Demo />
 
@@ -154,7 +155,7 @@ export const pageType = "blank";
             .before('MDXCompile')
             .resourceQuery(/meta/)
             .use('mdx-meta-loader')
-            .loader(path.join(__dirname, '../mdx-meta-loader.cjs'))
+            .loader(path.join(__dirname, '..', 'mdx-meta-loader.cjs'))
             .end();
 
           chain.resolve.extensions.prepend('.md').prepend('.mdx');
@@ -166,7 +167,9 @@ export const pageType = "blank";
     },
     globalStyles: path.join(
       __dirname,
-      `../static/${isMobile ? 'mobile' : 'web'}.css`,
+      '..',
+      'static',
+      `${isMobile ? 'mobile' : 'web'}.css`,
     ),
     addSSGRoutes() {
       return demoRoutes;

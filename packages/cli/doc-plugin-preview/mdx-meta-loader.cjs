@@ -1,8 +1,9 @@
+const { slash } = require('@modern-js/utils');
 const { demoMeta } = require('./dist');
 
 module.exports = async function () {
   const callback = this.async();
-  const demos = demoMeta[this.resourcePath] || [];
+  const demos = demoMeta[slash(this.resourcePath)] || [];
   try {
     const result = `
       ${demos

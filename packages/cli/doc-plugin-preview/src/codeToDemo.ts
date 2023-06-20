@@ -5,8 +5,10 @@ import type { RouteMeta } from '@modern-js/doc-core';
 import type { Plugin } from 'unified';
 import type { Root } from 'mdast';
 import type { MdxjsEsm } from 'mdast-util-mdxjs-esm';
+import { slash } from '@modern-js/utils';
 import { toValidVarName } from './utils';
 import { demoRoutes } from '.';
+
 /**
  * remark plugin to transform code to demo
  */
@@ -27,7 +29,7 @@ export const remarkCodeToDemo: Plugin<
         demos.push(
           getASTNodeImport(
             `Container`,
-            join(__dirname, '..', 'dist/container.js'),
+            join(__dirname, '..', 'dist', 'container.js'),
           ),
         );
 
@@ -46,7 +48,7 @@ export const remarkCodeToDemo: Plugin<
 
         const routeMeta = getRouteMeta();
         const { pageName } = routeMeta.find(
-          meta => meta.absolutePath === vfile.path,
+          meta => meta.absolutePath === slash(vfile.path),
         )!;
         const id = `${toValidVarName(pageName)}_${index++}`;
         const demoDir = join(
@@ -107,7 +109,7 @@ export const remarkCodeToDemo: Plugin<
 const getASTNodeImport = (name: string, from: string) =>
   ({
     type: 'mdxjsEsm',
-    value: `import ${name} from "${from}"`,
+    value: `import ${name} from "${slash(from)}"`,
     data: {
       estree: {
         type: 'Program',
