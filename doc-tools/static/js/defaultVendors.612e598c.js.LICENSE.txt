@@ -7,6 +7,8 @@
  * @public
  */
 
+/*! medium-zoom 1.0.8 | MIT License | https://github.com/francoischalifour/medium-zoom */
+
 /**
  * @license React
  * scheduler.production.min.js
@@ -16,5 +18,3 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-
-/*! medium-zoom 1.0.8 | MIT License | https://github.com/francoischalifour/medium-zoom */
