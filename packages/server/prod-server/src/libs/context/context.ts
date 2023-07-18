@@ -41,6 +41,8 @@ export class ModernServerContext implements ModernServerContextInterface {
 
   public serverData: Record<string, any>;
 
+  private _parsedURL?: URL;
+
   private options: ContextOptions = {};
 
   constructor(
@@ -57,9 +59,22 @@ export class ModernServerContext implements ModernServerContextInterface {
   }
 
   private get parsedURL() {
+    if (this._parsedURL) {
+      return this._parsedURL;
+    }
+
     // only for parse url, use mock
-    const url = new URL(this.req.url!, MOCK_URL_BASE);
-    return url;
+    try {
+      this._parsedURL = new URL(this.req.url!, MOCK_URL_BASE);
+      return this._parsedURL;
+    } catch (e) {
+      this.logger.error(
+        'Parse URL error',
+        (e as Error).stack || (e as Error).message,
+      );
+      this._parsedURL = new URL('/_modern_mock_path', MOCK_URL_BASE);
+      return this._parsedURL;
+    }
   }
 
   private bind() {
