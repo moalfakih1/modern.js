@@ -4,6 +4,7 @@ export const makeProvider = () => `
 export const provider = function ({basename, dom}) {
   return {
     render({basename, dom, props, appName}) {
+      injectBaseReactRefresh();
       render({ props, basename, dom, appName });
     },
     destroy({ dom }) {
@@ -77,6 +78,11 @@ function generateRootDom ({ dom, props, basename }) {
   }
   return { mountNode, props: mergedProps }
 }
+
+const injectBaseReactRefresh = () => {
+  injectIntoGlobalHook(window);
+  window?.__REACT_DEVTOOLS_GLOBAL_HOOK__?.inject(ReactDOM);
+};
 `;
 
 export const makeRenderFunction = (code: string) => {

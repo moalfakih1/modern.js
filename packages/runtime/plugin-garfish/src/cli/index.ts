@@ -233,6 +233,16 @@ export const garfishPlugin = ({
       modifyEntryImports({ entrypoint, imports }) {
         // eslint-disable-next-line react-hooks/rules-of-hooks
         const config = useResolvedConfigContext();
+        if (config?.deploy?.microFrontend) {
+          imports.push({
+            value: `${pluginName}/runtime`,
+            specifiers: [
+              {
+                imported: 'injectIntoGlobalHook',
+              },
+            ],
+          });
+        }
         const { masterApp } = getRuntimeConfig(config);
         if (masterApp) {
           imports.push({
