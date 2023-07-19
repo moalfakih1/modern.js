@@ -4,7 +4,9 @@ export const makeProvider = () => `
 export const provider = function ({basename, dom}) {
   return {
     render({basename, dom, props, appName}) {
-      injectBaseReactRefresh();
+      if (process.env.NODE_ENV === 'development') {
+        injectBaseReactRefresh();
+      }
       render({ props, basename, dom, appName });
     },
     destroy({ dom }) {
