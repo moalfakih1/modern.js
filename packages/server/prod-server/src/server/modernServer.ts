@@ -498,7 +498,11 @@ export class ModernServer implements ModernServerInterface {
   /* —————————————————————— private function —————————————————————— */
   // handler route.json, include api / csr / ssr
   private async routeHandler(context: ModernServerContext) {
-    const { res } = context;
+    const { res, reporter } = context;
+
+    // TODO: move suitable location
+    // initial for every route handle
+    reporter.init();
 
     // match routes in the route spec
     const matched = this.router.match(context.path);
