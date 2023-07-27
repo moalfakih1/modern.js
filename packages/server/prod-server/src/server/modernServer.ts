@@ -100,6 +100,8 @@ export class ModernServer implements ModernServerInterface {
 
   protected readonly proxyTarget: ModernServerOptions['proxyTarget'];
 
+  protected readonly metaName?: string;
+
   private routeRenderHandler!: ReturnType<typeof createRenderHandler>;
 
   private loaderHandler: LoaderHandler | null = null;
@@ -113,8 +115,6 @@ export class ModernServer implements ModernServerInterface {
   private _handler!: (context: ModernServerContext, next: NextFunction) => void;
 
   private readonly staticGenerate: boolean;
-
-  private readonly metaName?: string;
 
   constructor({
     pwd,
@@ -215,7 +215,7 @@ export class ModernServer implements ModernServerInterface {
   public async render(req: IncomingMessage, res: ServerResponse, url?: string) {
     req.logger = req.logger || this.logger;
     req.metrics = req.metrics || this.metrics;
-    const context = createContext(req, res, { meta: this.metaName });
+    const context = createContext(req, res, { metaName: this.metaName });
     const matched = this.router.match(url || context.path);
     if (!matched) {
       return null;
